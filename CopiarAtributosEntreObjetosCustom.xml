@@ -6,7 +6,7 @@
 	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
 	xmlns:xog="http://www.niku.com/xog">
 	
-	<!-- Environment information -->
+	<!-- Informações do ambiente -->
 	<gel:parameter default="http://CAPPM13X" var="XOGURL"/>
 	<gel:parameter default="xog" var="XOGUsername"/>
 	<gel:parameter default="gox"  var="XOGPassword"/>
@@ -15,7 +15,7 @@
  
 	<gel:setDataSource dbId="Niku"/>
 	
-	<!-- Get log book information -->
+	<!-- Busca informações sobre o diário de bordo -->
 	<sql:query var="logbook" escapeText="false">   
 		SELECT	lbk.code,
 				lbk.name,
@@ -30,7 +30,7 @@
 		WHERE	lbk.id = ${gel_objectInstanceId}
 	</sql:query>
 	
-	<!-- Save log book information -->
+	<!-- Salva as informações do diário de bordo -->
 	<core:forEach items="${logbook.rowsByIndex}" var="row">
 		<core:set var="lbk_id" value="${row[0]}"/>
 		<core:set var="lbk_name" value="${row[1]}"/>
@@ -43,7 +43,7 @@
 		<gel:log level="debug" message="Working with logbook register ${lbk_name} which ID is ${lbk_id}. [LOGBOOK][OK][1]"/>
 	</core:forEach>
 	
-	<!-- If the log book register was not saved as lesson learned before -->
+	<!-- Se o registro do diário de bordo ainda não foi salvo como lição aprendida... -->
 	<core:if test="${lbk_saved_as_ll == 0}">
 		<gel:log level="debug" message="Saving as Lesson Learned. [LOGBOOK][OK][2]"/>
 
@@ -62,7 +62,7 @@
 			</soap:message>
 		</soap:invoke>
 
-		<!-- Open Session -->
+		<!-- Session -->
 		<gel:set asString="true" select="$auth/soapenv:Envelope/soapenv:Body/xog:SessionID/text()" var="v_sessionID"/>
 		<core:choose>
 			<core:when test="${v_sessionID == null}">
@@ -75,14 +75,14 @@
 				<gel:log level="debug" message="Logged in with ${XOGUsername}! [XOG][OK][1]"/>
 			</core:if>
  
-			<!-- Save session ID -->
+			<!-- Salva session ID -->
 			<gel:set asString="true" select="$auth/soapenv:Envelope/soapenv:Body/xog:SessionID/text()" var="sessionID"/>
 
 			<core:if test="${DebugLevel &gt; 0}">
 				<gel:log level="debug" message="Session ID=${sessionID}. [XOG][OK][2]"/>
 			</core:if>
 			
-			<!-- Create a new lesson learned -->
+			<!-- Cria uma nova lição aprendida -->
 			<gel:parse var="v_xml_root">
 				<NikuDataBus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/nikuxog_customObjectInstance.xsd">
 				  <Header action="write" externalSource="NIKU" objectType="customObjectInstance" version="14.1.0.431">
@@ -155,7 +155,7 @@
 
 	</core:if>
 	
-	<!-- If the log book register was already saved as lesson learned -->
+	<!-- Se o registro do diário de bordo já foi salvo como lição aprendida anteriormente... -->
 	<core:if test="${lbk_saved_as_ll == 1}">
 		<gel:log level="debug" message="This log book register was already saved as lesson learned. [LOGBOOK][INFO][1]"/>
 	</core:if>
