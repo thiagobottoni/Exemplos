@@ -7,9 +7,9 @@
 	xmlns:xog="http://www.niku.com/xog">
 	
 	<!-- Informações do ambiente -->
-	<gel:parameter default="http://CAPPM13X" var="XOGURL"/>
+	<gel:parameter default="http://<seu_servidor_clarity>" var="XOGURL"/>
 	<gel:parameter default="xog" var="XOGUsername"/>
-	<gel:parameter default="gox"  var="XOGPassword"/>
+	<gel:parameter default="senha"  var="XOGPassword"/>
 	<gel:parameter default="c:\apps\clarity\logs" var="XOGlogFolder"/>
 	<gel:parameter default="1" var="DebugLevel"/>
  
@@ -18,15 +18,18 @@
 	<!-- Busca informações sobre o diário de bordo -->
 	<sql:query var="logbook" escapeText="false">   
 		SELECT	lbk.code,
-				lbk.name,
-				lbk.lbk_description,
-				lbk.odf_parent_id,
-				lbk.lbk_saved_as_ll,
-				lbk.partition_code,
-				inv.id
+			lbk.name,
+			lbk.lbk_description,
+			lbk.odf_parent_id,
+			lbk.lbk_saved_as_ll,
+			lbk.partition_code,
+			inv.id
+			
 		FROM	niku.odf_ca_lbk_log_book lbk
-				INNER JOIN	niku.INV_INVESTMENTS inv
-					ON		lbk.odf_parent_id = inv.ID
+		
+		INNER JOIN	niku.INV_INVESTMENTS inv
+			ON	lbk.odf_parent_id = inv.ID
+				
 		WHERE	lbk.id = ${gel_objectInstanceId}
 	</sql:query>
 	
