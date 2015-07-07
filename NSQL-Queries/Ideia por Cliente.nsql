@@ -3,14 +3,14 @@ SELECT	@SELECT:DIM:USER_DEF:IMPLIED:IDEA:demandas.cliente:cliente@,
 
 FROM	(
                 --Cliente não é um objeto nativo
-		SELECT 		cli.name cliente
-				, inv.code idea_id
-		FROM        	inv_ideas idea
+		SELECT 	    cli.name cliente
+			    , inv.code idea_id
+		FROM        inv_ideas idea
 		INNER JOIN  inv_investments inv
 			ON  idea.id = inv.id
 		INNER JOIN  odf_ca_inv odfi
 			ON  inv.id = odfi.id
-		INNER JOIN	ODF_CA_COR_CLIENTES cli
+		INNER JOIN  ODF_CA_COR_CLIENTES cli
 			ON  odfi.cor_cliente = cli.code
 				--Filtro por status (atributo não nativo)
 		WHERE		(	odfi.cor_status = 	@WHERE:PARAM:USER_DEF:STRING:status@
