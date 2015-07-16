@@ -11,22 +11,22 @@ FROM	(
 		INNER JOIN  odf_ca_inv odfi
 			ON  inv.id = odfi.id
 				-- Filtro por status (atributo não nativo)
-		WHERE		(	odfi.cor_status =	@WHERE:PARAM:USER_DEF:STRING:status@
+		WHERE		(	odfi.tbg_status =	@WHERE:PARAM:USER_DEF:STRING:status@
 				OR      			@WHERE:PARAM:USER_DEF:STRING:status@ is null
 				)
 			AND
 				-- Filtro por categoria (atributo não nativo)
-				(	odfi.cor_categoria = 	@WHERE:PARAM:USER_DEF:STRING:categoria@
+				(	odfi.tbg_categoria = 	@WHERE:PARAM:USER_DEF:STRING:categoria@
 				OR				@WHERE:PARAM:USER_DEF:STRING:categoria@ is null
 				)
 			AND
 				-- Filtro por tipo (atributo não nativo)
-				(	odfi.cor_tipo = 	@WHERE:PARAM:USER_DEF:STRING:tipo@
+				(	odfi.tbg_tipo = 	@WHERE:PARAM:USER_DEF:STRING:tipo@
 				OR      			@WHERE:PARAM:USER_DEF:STRING:tipo@ is null
 				)
 			AND
 				-- Filtro por cliente (atributo não nativo)
-				(	odfi.cor_cliente = 	@WHERE:PARAM:USER_DEF:STRING:cliente@
+				(	odfi.tbg_cliente = 	@WHERE:PARAM:USER_DEF:STRING:cliente@
 				OR      			@WHERE:PARAM:USER_DEF:STRING:cliente@ is null
 				)
 	) demandas
