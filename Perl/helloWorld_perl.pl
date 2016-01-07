@@ -309,11 +309,9 @@ sub VerifyInput {
 #######################################################
 #
 # [1. CPAN Official Site] >>>>>>>>>> http://search.cpan.org/ [English]
-# [2. Aprendendo Perl] >>>>>>>>>>>>>>> http://www.lobo.eti.br/?g_id=60#6.1 [Portuguese]
-# [3. Como desenvolver com Perl] >>>> http://www.gustavoroberto.blog.br/2007/03/22/curso-de-perl-como-programar-em-perl/ [Portuguese]
-# [4. How to Pack .pl into .exe] >>> http://hexample.com/2012/01/04/packing-perl-standalone-executable/ [English]
-# [5. Read Files in Perl] >>>>>>>>>> http://perl.about.com/od/perltutorials/a/readwritefiles.htm [English]
-# [6. Write Files in Perl] >>>>>>>>> http://perl.about.com/od/perltutorials/a/readwritefiles_2.htm [English]
-# [7. More File Functions] >>>>>>>>> http://www.perlhowto.com/working_with_files [English]
+# [2. Tutorial Perl] >>>>>>>>>>>>>>> http://www.lobo.eti.br/?g_id=60#6.1 [Portuguese]
+# [3. Read Files in Perl] >>>>>>>>>> http://perl.about.com/od/perltutorials/a/readwritefiles.htm [English]
+# [4. Write Files in Perl] >>>>>>>>> http://perl.about.com/od/perltutorials/a/readwritefiles_2.htm [English]
+# [5. More File Functions] >>>>>>>>> http://www.perlhowto.com/working_with_files [English]
 #
 #######################################################
