@@ -310,8 +310,8 @@ sub VerifyInput {
 #
 # [1. CPAN Official Site] >>>>>>>>>> http://search.cpan.org/ [English]
 # [2. Tutorial Perl] >>>>>>>>>>>>>>> http://www.lobo.eti.br/?g_id=60#6.1 [Portuguese]
-# [3. Read Files in Perl] >>>>>>>>>> http://perl.about.com/od/perltutorials/a/readwritefiles.htm [English]
-# [4. Write Files in Perl] >>>>>>>>> http://perl.about.com/od/perltutorials/a/readwritefiles_2.htm [English]
-# [5. More File Functions] >>>>>>>>> http://www.perlhowto.com/working_with_files [English]
+# [3. Reading a File in Perl] >>>>>>>>>> http://perl.about.com/od/perltutorials/a/readwritefiles.htm [English]
+# [4. Writing to a File in Perl] >>>>>>>>> http://perl.about.com/od/perltutorials/a/readwritefiles_2.htm [English]
+# [5. Working with Files] >>>>>>>>> http://www.perlhowto.com/working_with_files [English]
 #
 #######################################################
