@@ -201,7 +201,7 @@ var objNome = meuObjeto.nome;
 //A segunda forma para acessar um valor de um objeto, basta usar <nome do objeto>["<nome do parâmetro"];
 var objIdade = meuObjeto["idade"];
 
-//Primeira forma para criar um objeto: Construtor
+//Segunda forma para criar um objeto: Construtor
 var pessoa = new Object();
 
 //Adicionar parâmetros em objetos
