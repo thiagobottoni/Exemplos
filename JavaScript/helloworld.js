@@ -145,7 +145,7 @@ switch(celular) {
 		console.log("Galaxy é da Samsung.");
 		break;
 	case 'Windows Phone':
-		console.log("Windows Phone é da Microsoft);
+		console.log("Windows Phone é da Microsoft.");
 		break;
 	default: //Essa instrução é executada caso nenhum case acima seja válido.
 		console.log("Não reconheci o celular informado.");
