@@ -1,0 +1,12 @@
+{
+   "manifest_version": 2,
+   "name": "Hello World",
+   "version": "1.0",
+   "description": "Tutorial sobre como criar uma extensão para o Chrome.",
+   "browser_action":{
+		"default_popup": "popup.html"
+   },
+   "icons": {
+		"16": "imagens/icon16.png"
+	}
+}
