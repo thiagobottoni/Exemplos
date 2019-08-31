@@ -1,4 +1,4 @@
-//Exibe o comprimento da string.
+a//Exibe o comprimento da string.
 var teste = "Teste".length;
 
 //Interação
@@ -44,17 +44,17 @@ else {
 var resposta = prompt('Digite um número: ');
 
 if(isNaN(resposta)) { //isNaN (is not a number) verifica se a variável não é um número.
-      return "Você não informou um número.";
-  } else if (resposta % 2 === 0) {
-      return true;
-  } else {
-      return false;
-  }
+      console.log("Você não informou um número");
+} else if (resposta % 2 === 0) {
+      console.log(true);
+} else {
+      console.log(false);
+}
 
 //Retorna somente uma parte de uma string.
 //<variável>.substring(<posição inicial>, <posição final>);
 //Sendo que a primeira posição da variável é zero, a segunda é um, a terceira é 2, e assim sucessivamente.
-"Teste Somente este texto será exibido. Teste".substring(6, 37);
+console.log("Teste Somente este texto será exibido. Teste".substring(6, 37));
 
 //Variáveis
 //Para declarar uma variável, use var <nome da variável>;
@@ -103,13 +103,13 @@ i - 1 pode ser escrito como i--
 //ARRAYS
 //Arrays armazenam listas de dados
 //Sintaxe: var nomeDoArray[dado, dado, dado, dado];
-var meuPrimeiroArray["Nome 1", 12, "Nome 2", 15, "Nome 3", 30];
+var meuPrimeiroArray = ["Nome 1", 12, "Nome 2", 15, "Nome 3", 30];
 
 console.log(meuPrimeiroArray); //Imprime o array inteiro.
-console.log(meuPrimeiroArray[2]; //Imprime a segunda posição do array. Lembrando que a primeira posição é a posição zero.
+console.log(meuPrimeiroArray[2]); //Imprime a segunda posição do array. Lembrando que a primeira posição é a posição zero.
 
 //Loops e Arrays
-var jokenpo["Pedra", "Papel", "Tesoura"];
+var jokenpo = ["Pedra", "Papel", "Tesoura"];
 
 for(var cont = 0; cont < jokenpo.length; cont++) {
 	console.log("Jokenpô >> " + jokenpo[cont]);
