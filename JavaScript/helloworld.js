@@ -1,4 +1,4 @@
-a//Exibe o comprimento da string.
+//Exibe o comprimento da string.
 var teste = "Teste".length;
 
 //Interação
